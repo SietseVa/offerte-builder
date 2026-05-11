@@ -1,0 +1,320 @@
+products:
+  Tafels:
+    - id: "square_tabletop_inside_untreated"
+      name: "Tafelblad rechthoekig, inside, onbehandeld"
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 380
+    - id: "round_tabletop_inside_untreated"
+      name: "Tafelblad ronde, inside, onbehandeld"
+      unit: "m2"
+      fields:
+        - id: "diameter_cm"
+          name: "Diameter (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "base_price + (diameter_price * (diameter_cm / 100) ** 2 * 3.14159 / 4)"
+        variables:
+          base_price: 100
+          diameter_price: 400
+    - id: "square_tabletop_koplat_untreated"
+      name: "Tafelblad met koplat, onbehandeld"
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 420
+    - id: "complete_table_outside"
+      name: "Complete tafel outside"
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+        - id: "onderstel"
+          name: "Onderstel"
+          type: "checkbox"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100) + (onderstel * onderstel_price)"
+        variables:
+          square_price: 380
+          onderstel_price: 500
+    - id: "salontable"
+      name: "Salontafel"
+      unit: "m2"
+      fields:
+        - id: "diameter_cm"
+          name: "Diameter (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "base_price + (diameter_price * (diameter_cm / 100) ** 2 * 3.14159 / 4)"
+        variables:
+          base_price: 50
+          diameter_price: 350
+  Blokwanden:
+    - id: long_untreated
+      name: Lang blokwand onbehandeld
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "thickness_cm"
+          name: "Dikte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "(square_price + thickness_saw_price + thickness_planing_price + brushing_price) * (length_cm / 100) * (thickness_cm / 100)"
+        variables:
+          square_price: 160
+          thickness_saw_price: 10
+          thickness_planing_price: 10
+          brushing_price: 5
+    - id: short_untreated
+      name: Kort blokwand onbehandeld
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "thickness_cm"
+          name: "Dikte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "(square_price + thickness_saw_price + thickness_planing_price + brushing_price) * (length_cm / 100) * (thickness_cm / 100)"
+        variables:
+          square_price: 145
+          thickness_saw_price: 10
+          thickness_planing_price: 10
+          brushing_price: 5
+  Wandpanelen en Platen:
+    - id: old_oak_single_outside
+      name: Oud eiken enkelzijdig verlijmd outside geborsteld
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 140
+    - id: old_oak_double_outside
+      name: Oud eiken tweezijdig verlijmd outside geborsteld
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 180
+    - id: old_oak_inside_single_sanded
+      name: Oud eiken enkelzijdig verlijmd inside geschuurd
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 90
+    - id: old_oak_inside_double_sanded
+      name: Oud eiken tweezijdig verlijmd inside geschuurd
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 150
+    - id: tripple_layered_panels
+      name: Drie laags panelen
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "(180 if length_cm < 160 else 200 if length_cm < 220 else 220 if length_cm < 260 else 240) * (length_cm / 100) * (width_cm / 100)"
+        variables: {}
+  Balken:
+    - id: old_oak_beam
+      name: Oud eiken balk
+      unit: "m3"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+        - id: "height_cm"
+          name: "Hoogte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "(cubic_price + brushing_price) * (length_cm / 100) * (width_cm / 100) * (height_cm / 100)"
+        variables:
+          cubic_price: 1400
+          brushing_price: 15
+  Vloeren:
+    - id: multiplank_outside
+      name: Multiplank vloer outside
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 130
+    - id: multiplank_inside
+      name: Multiplank vloer inside, onbehandeld
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 85
+    - id: massive_outside
+      name: Massieve vloer outside 10mm
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 92.50
+    - id: massive_inside
+      name: Massieve vloer inside 10mm
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 72.50
+    - id: herringbone_outside
+      name: Visgraat vloer outside 8mm
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 125
+    - id: herringbone_inside
+      name: Visgraat vloer inside 8mm
+      unit: "m2"
+      fields:
+        - id: "length_cm"
+          name: "Lengte (cm)"
+          type: "number"
+          required: true
+        - id: "width_cm"
+          name: "Breedte (cm)"
+          type: "number"
+          required: true
+      pricing:
+        formula: "square_price * (length_cm / 100) * (width_cm / 100)"
+        variables:
+          square_price: 95
+      
